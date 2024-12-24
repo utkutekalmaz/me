@@ -1,33 +1,60 @@
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import "./blogpost.css";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+	scrollbar-color: var(--awesomeee-post) transparent;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	@apply h-screen w-screen overflow-x-hidden overflow-y-scroll transition-colors duration-300;
+
+	font-family: var(--font-zilla-slab);
+	scrollbar-color: var(--awesomeee-post) transparent;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+:root {
+	--awesomeee-primary: #52493c;
+	--awesomeee-secondary: #dcdcdc;
+	--awesomeee-accent: #db9e6f;
+	--awesomeee-link: #eaaa33;
+
+	--awesomeee-header: #eaaa33;
+	--awesomeee-post: #52493c;
+	--awesomeee-list-deco: "✨";
+}
+
+.istanbul {
+	--awesomeee-primary: #24436b;
+	--awesomeee-secondary: #dbedff;
+	--awesomeee-accent: #db9e6f;
+	--awesomeee-link: #52493c;
+
+	--awesomeee-header: #52493c;
+	--awesomeee-post: #24436b;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--awesomeee-primary: #dcdcdc;
+		--awesomeee-secondary: #52493c;
+		--awesomeee-accent: #db9e6f;
+		--awesomeee-link: #eaaa33;
+
+		--awesomeee-post: #e0d2b8;
+		--awesomeee-header: #eaaa33;
+	}
+
+	.istanbul {
+		--awesomeee-primary: #dcbdfb;
+		--awesomeee-secondary: #1e385b;
+		--awesomeee-link: #eaaa33;
+		--awesomeee-accent: #db9e6f;
+
+		--awesomeee-post: #c4ccd4;
+		--awesomeee-header: #dcbdfb;
+	}
 }
